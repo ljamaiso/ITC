@@ -4,121 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Introduction Page</title>
+    <title>CS 1130 - Introduction to Computing</title>
     <style>
-        /* Basic reset to remove default browser styles */
-        * {
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Discord-like font family */
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #2f3136; /* Discord's dark background color */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Set a background color and font for the whole page */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: #18191c; /* Darker gray/blackish shade */
+            color: white;
+            display: flex;
+            justify-content: flex-start; /* Align name to the left */
+            align-items: center;
+            padding: 10px 20px; /* Reduced padding to make it smaller */
+            font-size: 1rem; /* Smaller font size */
+            font-weight: bold;
         }
 
-        /* Center content in a container with some padding */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .top-bar .name {
+            font-size: 1.4rem; /* Slightly smaller text */
+        }
+
+        /* Course Title Container */
+        .course-title-container {
+            background-color: #40444b;  /* Lighter gray for course title container */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;  /* Space between course title and assignments */
+            border-radius: 8px;  /* Rounded corners for consistency */
+        }
+
+        /* Centered Content (Assignments Section) */
+        .centered-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 20px;
         }
 
-        /* Styling the header */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        /* Styling the intro section */
-        .intro {
-            background-color: white;
+        /* Assignments Container */
+        .assignments-container {
+            background-color: #36393F;  /* Darker gray content area */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            padding: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
         }
 
-        .intro h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .intro p {
-            font-size: 1.2em;
-            line-height: 1.6;
+        .assignments-container h2 {
+            font-size: 2rem;
             margin-bottom: 20px;
+            color: #5865F2; /* Discord's blue color for headings */
         }
 
-        /* Styling for the profile image */
-        .profile-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            border: 5px solid #4CAF50;
-            display: block;
-            margin: 0 auto;
-            max-width: 150px;
+        .assignments-container p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #b9bbbe; /* Light gray text */
         }
 
-        /* Footer styling */
-        footer {
-            background-color: #333;
+        .assignments-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .assignments-container li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #b9bbbe; /* Light gray text */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .assignments-container li:hover {
+            color: #ff5c00; /* Orange hover effect, to add an accent color */
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #202225; /* Same as top bar */
             color: white;
-            padding: 15px 0;
             text-align: center;
+            padding: 10px;
+            font-size: 1rem;
         }
 
-        footer p {
-            font-size: 1em;
-        }
-
-        /* Add responsiveness for smaller screens */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            .intro h2 {
-                font-size: 1.8em;
-            }
-
-            .intro p {
-                font-size: 1em;
-            }
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Welcome To My Humble Abode!</h1>
-        </div>
-    </header>
 
-    <section class="intro">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hi! I'm Lance Maiso, a student passionate about creating beautiful and functional websites. I love to learn new technologies and build things that make a difference.</p>
-            <img src="profile.jpg" alt="Lance Maiso" class="profile-img">
-        </div>
-    </section>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="name">ljamaiso</div>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Lance Maiso | All Rights Reserved</p>
+    <!-- Course Title Container -->
+    <div class="course-title-container">
+        CS 1130 - Introduction to Computing
+    </div>
+
+    <!-- Centered Content (Assignments) -->
+    <div class="centered-content">
+        <div class="assignments-container">
+            <h2>Assignments</h2>
+            <p>Student: Lance Jasper A. Maiso</p>
+            <ul>
+                <li>Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</li>
+                <li>Assignment #2 - Income Tax Calculator</li>
+                <li>Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</li>
+                <li>Assignment #4 - Simple Payroll</li>
+            </ul>
         </div>
-    </footer>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Lance Jasper A. Maiso. All rights reserved.
+    </div>
+
 </body>
 </html>
