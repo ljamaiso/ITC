@@ -50,7 +50,7 @@
         /* Course Title Container */
         .course-title-container {
             background-color: #d9bc96; /* Famicom light tan */
-            color: #c42827; /* Red text */
+            color: #c42827; /* White text */
             padding: 20px;
             text-align: center;
             font-size: 1.5rem;
@@ -75,19 +75,6 @@
             width: 100%;
         }
 
-        /* Animation for floating effect */
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px); /* Adjust the distance for the floating effect */
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
         /* Pixel Art Assignment Containers */
         .assignment-container {
             background-color: #b89470; /* Famicom-style brown */
@@ -97,13 +84,16 @@
             text-align: left;
             font-size: 1rem; /* Larger font */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            animation: float 3s ease-in-out infinite; /* Apply the animation */
-            transition: transform 0.2s, box-shadow 0.2s;
+            animation: float 3s ease-in-out infinite;
         }
 
-        .assignment-container:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .assignment-container h3 {
@@ -111,6 +101,7 @@
             color: #c42827; /* Famicom red */
             margin-bottom: 12px; /* Increased margin */
             cursor: pointer;
+            text-shadow: 2px 2px 0 #FFFFFF; /* Darker shadow for depth */
         }
 
         .assignment-container h3:hover {
@@ -133,33 +124,25 @@
             font-size: 0.8rem;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
-
-        /* Mute Button */
-        .mute-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #c42827; /* Famicom red */
-            color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
     </style>
 </head>
 <body>
 
     <!-- Background Music -->
-    <audio controls id="background-music" autoplay loop>
+    <audio id="background-music" autoplay loop>
         <source src="retromusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Mute Button -->
-    <button class="mute-button" onclick="toggleMute()">Mute</button>
+    <!-- Play Music Button -->
+    <button onclick="playMusic()">Play Music</button>
+
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('background-music');
+            audio.play();
+        }
+    </script>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -214,13 +197,6 @@
     <div class="footer">
         &copy; 2024 Lance Jasper A. Maiso.
     </div>
-
-    <script>
-        function toggleMute() {
-            const music = document.getElementById('background-music');
-            music.muted = !music.muted;
-        }
-    </script>
 
 </body>
 </html>
