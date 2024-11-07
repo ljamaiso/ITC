@@ -149,6 +149,27 @@
             margin-bottom: 10px;
         }
 
+        /* Back to Home Page link */
+        .back-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 2px solid #ffffff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #ffffff;
+            color: #a62c2b;
+        }
+
     </style>
 </head>
 <body>
@@ -192,19 +213,14 @@
         </div>
     </div>
 
+    <!-- Back to Home Page Link -->
+    <div class="back-link">
+        <a href="index.html">Back to Home Page</a>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
         &copy; Conversion Assignment
-
-    <!-- Adding Back to Homepage Link -->
-<div class="footer">
-    &copy; Conversion Assignment
-    <br>
-    <a href="index.html" style="color: #ffffff; text-decoration: none; margin-top: 10px; display: inline-block;">
-        Back to Home Page
-    </a>
-</div>
-
     </div>
 
     <script>
@@ -233,9 +249,4 @@
         function convertFeetToMeters() {
             let feet = document.getElementById("metersInput").value;
             let meters = feet / 3.28084;
-            document.getElementById("metersResult").innerText = `${feet} feet = ${meters.toFixed(2)} meters`;
-        }
-    </script>
-
-</body>
-</html>
+            document.getElementById("metersResult
