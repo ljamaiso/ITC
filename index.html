@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CS 1130 - Introduction to Computing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
     <style>
         /* General Body Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Discord-like font family */
+            font-family: 'Press Start 2P', cursive; /* Pixel-style font */
             margin: 0;
             padding: 0;
-            background-color: #2f3136; /* Discord's dark background color */
+            background-color: #2f3136; /* Discord dark background */
             color: white;
             display: flex;
             flex-direction: column;
@@ -20,30 +21,26 @@
 
         /* Top Bar Styles */
         .top-bar {
-            background-color: #18191c; /* Darker gray/blackish shade */
-            color: white;
+            background-color: #18191c; /* Darker gray/blackish for top bar */
+            color: #7289DA; /* Discord blue */
             display: flex;
-            justify-content: flex-start; /* Align name to the left */
+            justify-content: flex-start;
             align-items: center;
-            padding: 10px 20px; /* Reduced padding to make it smaller */
-            font-size: 1rem; /* Smaller font size */
+            padding: 8px 16px;
+            font-size: 1.4rem; /* Smaller font size */
             font-weight: bold;
-        }
-
-        .top-bar .name {
-            font-size: 1.4rem; /* Slightly smaller text */
         }
 
         /* Course Title Container */
         .course-title-container {
-            background-color: #40444b;  /* Lighter gray for course title container */
-            color: white;
-            padding: 20px;
+            background-color: #36393F;  /* Darker gray background for course title */
+            color: #7289DA; /* Discord blue */
+            padding: 12px;
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.6rem; /* Smaller font size */
             font-weight: bold;
-            margin-bottom: 20px;  /* Space between course title and assignments */
-            border-radius: 8px;  /* Rounded corners for consistency */
+            margin-bottom: 15px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Soft shadow */
         }
 
         /* Centered Content (Assignments Section) */
@@ -56,48 +53,66 @@
             padding: 20px;
         }
 
-        /* Assignments Container */
-        .assignments-container {
-            background-color: #36393F;  /* Darker gray content area */
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Assignments Section */
+        .assignments-section {
             max-width: 600px;
             width: 100%;
         }
 
-        .assignments-container h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #5865F2; /* Discord's blue color for headings */
+        /* Pixel Art Assignment Containers */
+        .assignment-container {
+            background-color: #40444b; /* Discord dark gray background */
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Soft shadow */
+            text-align: left;
+            font-size: 1rem; /* Smaller font size */
+            transition: all 0.2s ease-in-out;
         }
 
-        .assignments-container p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+        .assignment-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+        }
+
+        .assignment-container h3 {
+            font-size: 1.1rem; /* Smaller title size to fit in 1 line */
+            color: #5865F2; /* Discord blue */
+            margin-bottom: 8px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .assignment-container h3:hover {
+            color: #ff5c00; /* Orange color on hover */
+        }
+
+        .assignment-container p {
+            font-size: 1rem; /* Smaller text for description */
             color: #b9bbbe; /* Light gray text */
+            margin-bottom: 8px;
         }
 
-        .assignments-container ul {
+        .assignment-container ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .assignments-container li {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .assignment-container li {
+            font-size: 1rem; /* Smaller list item text */
+            margin-bottom: 8px;
             color: #b9bbbe; /* Light gray text */
             transition: color 0.2s ease-in-out;
         }
 
-        .assignments-container li:hover {
-            color: #ff5c00; /* Orange hover effect, to add an accent color */
+        .assignment-container li:hover {
+            color: #ff5c00; /* Orange hover effect */
         }
 
         /* Footer Styles */
         .footer {
-            background-color: #202225; /* Same as top bar */
-            color: white;
+            background-color: #18191c; /* Dark gray for footer */
+            color: #b9bbbe; /* Light gray text */
             text-align: center;
             padding: 10px;
             font-size: 1rem;
@@ -119,15 +134,40 @@
 
     <!-- Centered Content (Assignments) -->
     <div class="centered-content">
-        <div class="assignments-container">
-            <h2>Assignments</h2>
-            <p>Student: Lance Jasper A. Maiso</p>
-            <ul>
-                <li>Assignment #1 - Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</li>
-                <li>Assignment #2 - Income Tax Calculator</li>
-                <li>Assignment #3 - Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</li>
-                <li>Assignment #4 - Simple Payroll</li>
-            </ul>
+        <div class="assignments-section">
+
+            <!-- Assignment #1 -->
+            <div class="assignment-container">
+                <a href="assignment1.html">
+                    <h3>Assignment #1 - Conversion</h3>
+                </a>
+                <p>Convert units like Celsius to Fahrenheit and Meters to Feet.</p>
+            </div>
+
+            <!-- Assignment #2 -->
+            <div class="assignment-container">
+                <a href="assignment2.html">
+                    <h3>Assignment #2 - Income Tax Calculator</h3>
+                </a>
+                <p>Calculate tax based on income ranges.</p>
+            </div>
+
+            <!-- Assignment #3 -->
+            <div class="assignment-container">
+                <a href="assignment3.html">
+                    <h3>Assignment #3 - Factorial, Sum, and Average</h3>
+                </a>
+                <p>Calculate factorial, sum, and average of first N numbers.</p>
+            </div>
+
+            <!-- Assignment #4 -->
+            <div class="assignment-container">
+                <a href="assignment4.html">
+                    <h3>Assignment #4 - Simple Payroll</h3>
+                </a>
+                <p>Design a payroll system for calculating salaries.</p>
+            </div>
+
         </div>
     </div>
 
