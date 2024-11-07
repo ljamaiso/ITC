@@ -24,32 +24,14 @@
         }
 
         body::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
-        z-index: -1; /* Ensure it is behind other content */
-        }
-
-        /* Styling for mute button */
-        .mute-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px;
-            background-color: #c42827; /* Famicom red */
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            font-size: 0.8rem;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-        }
-
-        .mute-button:hover {
-            background-color: #ffcc33; /* Gold highlight on hover */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
+            z-index: -1; /* Ensure it is behind other content */
         }
 
         /* Top Bar Styles */
@@ -68,7 +50,7 @@
         /* Course Title Container */
         .course-title-container {
             background-color: #d9bc96; /* Famicom light tan */
-            color: #c42827; /* White text */
+            color: #c42827; /* Red text */
             padding: 20px;
             text-align: center;
             font-size: 1.5rem;
@@ -93,6 +75,19 @@
             width: 100%;
         }
 
+        /* Animation for floating effect */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Adjust the distance for the floating effect */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
         /* Pixel Art Assignment Containers */
         .assignment-container {
             background-color: #b89470; /* Famicom-style brown */
@@ -102,6 +97,7 @@
             text-align: left;
             font-size: 1rem; /* Larger font */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            animation: float 3s ease-in-out infinite; /* Apply the animation */
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
@@ -115,10 +111,8 @@
             color: #c42827; /* Famicom red */
             margin-bottom: 12px; /* Increased margin */
             cursor: pointer;
-            text-shadow: 2px 2px 0 #FFFFFF, /* Darker shadow for depth */
-            
+            text-shadow: 2px 2px 0 #FFFFFF; /* Lighter shadow for depth */
         }
-
 
         .assignment-container h3:hover {
             color: #ffcc33; /* Gold highlight on hover */
@@ -140,6 +134,21 @@
             font-size: 0.8rem;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
+
+        /* Mute Button */
+        .mute-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #c42827; /* Famicom red */
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
@@ -147,7 +156,7 @@
     <!-- Background Music -->
     <audio id="background-music" autoplay loop>
         <source src="retromusic.mp3" type="audio/mpeg">
-        <source src="retromusic.mp3" type="audio/wav">
+        Your browser does not support the audio element.
     </audio>
 
     <!-- Mute Button -->
@@ -166,6 +175,7 @@
     <!-- Centered Content (Assignments) -->
     <div class="centered-content">
         <div class="assignments-section">
+
             <!-- Assignment #1 -->
             <div class="assignment-container">
                 <a href="assignment1.html" style="text-decoration: none; color: inherit;">
@@ -173,6 +183,7 @@
                 </a>
                 <p>Convert units like Celsius to Fahrenheit and Meters to Feet.</p>
             </div>
+
             <!-- Assignment #2 -->
             <div class="assignment-container">
                 <a href="assignment2.html" style="text-decoration: none; color: inherit;">
@@ -180,6 +191,7 @@
                 </a>
                 <p>Calculate tax based on income ranges.</p>
             </div>
+
             <!-- Assignment #3 -->
             <div class="assignment-container">
                 <a href="assignment3.html" style="text-decoration: none; color: inherit;">
@@ -187,6 +199,7 @@
                 </a>
                 <p>Calculate factorial, sum, and average of first N numbers.</p>
             </div>
+
             <!-- Assignment #4 -->
             <div class="assignment-container">
                 <a href="assignment4.html" style="text-decoration: none; color: inherit;">
@@ -194,22 +207,21 @@
                 </a>
                 <p>Design a payroll system for calculating salaries.</p>
             </div>
+
         </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        &copy; 2024 Lance Jasper A. Maiso. 
+        &copy; 2024 Lance Jasper A. Maiso.
     </div>
 
     <script>
-        const audio = document.getElementById('background-music');
-        audio.volume = 0.1; // Lower volume for background music
-
         function toggleMute() {
-            audio.muted = !audio.muted;
-            document.querySelector('.mute-button').innerText = audio.muted ? 'Unmute' : 'Mute';
+            const music = document.getElementById('background-music');
+            music.muted = !music.muted;
         }
     </script>
+
 </body>
 </html>
