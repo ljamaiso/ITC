@@ -1,47 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Income Tax Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
+            margin: 0;
+            padding: 0;
+            background-color: #7c6b59; /* Famicom beige background */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Title Container */
+        .container {
+            background-color: #d9bc96; /* Famicom light tan */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            width: 300px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Taxable Income Label Style */
+        label {
+            font-size: 1rem;
+            color: #ffffff; /* White font color for label */
+        }
+
+        /* Input Styles */
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            background-color: #e9e9e9;
+            color: #333;
+            cursor: not-allowed;
+        }
+
+        .button {
+            background-color: #a62c2b; /* Famicom red */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #5e1a1a; /* Darker red on hover */
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
+            font-size: 0.8rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+            margin-top: auto; /* Ensures footer stays at the bottom */
+        }
+
+         /* Back to Home Page link */
+        .back-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 2px solid #ffffff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #ffffff;
+            color: #a62c2b;
+        }
+
+    </style>
+</head>
 <body>
 
-<h1>Income Tax Calculator</h1>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="name">Income Tax Calculator</div>
+    </div>
 
-<label>Taxable Income</label>
-<input type="number" id="ti" onkeyup="computeTax()">
-<br>
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Taxable Income</h1>
 
-<label>Tax Payable</label>
-<input type="text" id="incometax" readonly>
+        <label for="ti">Enter Taxable Income</label>
+        <input type="number" id="ti" onkeyup="computeTax()">
+        <br>
+
+        <label for="incometax">Tax Payable</label>
+        <input type="text" id="incometax" readonly>
+
+        <button class="button" onclick="computeTax()">Calculate Tax</button>
+    </div>
+
+    <!-- Back to Home Page Link -->
+    <div class="back-link">
+        <a href="index.html">Back to Home Page</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Lance Jasper A. Maiso. All rights reserved.
+    </div>
+
+    <script>
+        function computeTax() {
+            let ti, basictax, brackettax, totaltax;
+
+            ti = document.getElementById("ti").value * 1;
+
+            if (ti < 250000) {
+                basictax = 0;
+                brackettax = 0;
+            } else if (ti >= 250000 && ti < 400000) {
+                basictax = 0;
+                brackettax = 0.2 * (ti - 250000);
+            } else if (ti >= 400000 && ti < 800000) {
+                basictax = 30000;
+                brackettax = 0.25 * (ti - 400000);
+            } else if (ti >= 800000 && ti < 2000000) {
+                basictax = 130000;
+                brackettax = 0.30 * (ti - 800000);
+            } else if (ti >= 2000000 && ti < 8000000) {
+                basictax = 490000;
+                brackettax = 0.32 * (ti - 2000000);
+            } else if (ti >= 8000000) {
+                basictax = 2410000;
+                brackettax = 0.35 * (ti - 8000000);
+            }
+
+            totaltax = basictax + brackettax;
+            document.getElementById("incometax").value = totaltax.toFixed(0); 
+        }
+    </script>
 
 </body>
-<script>
-function computeTax() {
-    let ti, basictax, brackettax, totaltax;
-
-    ti = document.getElementById("ti").value * 1;
-
-    if (ti < 250000) {
-        basictax = 0;
-        brackettax = 0;
-    } else if (ti >= 250000 && ti < 400000) {
-        basictax = 0;
-        brackettax = 0.2 * (ti - 250000);
-    }else if (ti >= 400000 && ti < 800000 ){
-        basictax = 30000;
-        brackettax = 0.25 * (ti - 400000);
-    }else if (ti >= 800000 && ti < 2000000 ){
-        basictax = 130000;
-        brackettax = 0.30 * (ti - 800000);
-    }else if (ti >= 2000000 && ti < 8000000 ){
-        basictax = 490000;
-        brackettax = 0.32 * (ti - 2000000);
-    }else if (ti >= 8000000){
-        basictax = 2410000;
-        brackettax = 0.35 * (ti - 8000000);
-    }
-
-
-    totaltax = basictax + brackettax;
-    document.getElementById("incometax").value = totaltax.toFixed(0); 
-}
-
-</script>
 </html>
