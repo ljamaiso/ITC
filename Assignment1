@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CS 1130 </title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
+            margin: 0;
+            padding: 0;
+            background-color: #7c6b59; /* Famicom beige background */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Course Title Container */
+        .course-title-container {
+            background-color: #d9bc96; /* Famicom light tan */
+            color: #FFFFFF; /* White text */
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 2px solid #a62c2b; /* Famicom red border */
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Centered Content (Assignments Section) */
+        .centered-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Assignments Section */
+        .assignments-section {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Pixel Art Assignment Containers */
+        .assignment-container {
+            background-color: #b89470; /* Famicom-style brown */
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #5e1a1a; /* Dark red border */
+            text-align: left;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .assignment-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .assignment-container h3 {
+            font-size: 1rem;
+            color: #ffffff; /* White text */
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .assignment-container h3:hover {
+            color: #ffcc33; /* Gold highlight on hover */
+        }
+
+        .assignment-container p {
+            font-size: 0.8rem;
+            color: #f5f5f5; /* Slightly off-white text */
+            margin-bottom: 8px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
+            font-size: 0.8rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Conversion Form Styles */
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            background-color: #d9bc96; /* Famicom light tan */
+            font-size: 1rem;
+            color: #2e2e2e; /* Dark text */
+            border-radius: 4px;
+        }
+
+        input:focus, button:focus {
+            outline: none;
+            background-color: #a62c2b; /* Famicom red focus */
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #5e1a1a; /* Dark Famicom red */
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            width: auto;
+        }
+
+        button:hover {
+            background-color: #d9bc96; /* Famicom light tan hover */
+            color: #2e2e2e;
+        }
+
+        /* Button Container for Side-by-Side Layout */
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Align buttons to the left */
+            gap: 10px; /* Close gap between buttons */
+            margin-left: auto; /* Push buttons to the right */
+        }
+
+        /* Input fields container */
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="name">CS 1130</div>
+    </div>
+
+    <!-- Course Title -->
+    <div class="course-title-container">
+        Assignment #1 - Conversion
+    </div>
+
+    <!-- Centered Content -->
+    <div class="centered-content">
+        <div class="assignments-section">
+            <div class="assignment-container">
+                <h3>Celsius to Fahrenheit / Fahrenheit to Celsius</h3>
+                <div class="input-container">
+                    <input type="number" id="celsiusInput" placeholder="Enter Celsius">
+                </div>
+                <div class="button-container">
+                    <button onclick="convertCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+                    <button onclick="convertFahrenheitToCelsius()">Convert to Celsius</button>
+                </div>
+                <p id="celsiusResult"></p>
+            </div>
+            
+            <div class="assignment-container">
+                <h3>Meters to Feet / Feet to Meters</h3>
+                <div class="input-container">
+                    <input type="number" id="metersInput" placeholder="Enter Meters">
+                </div>
+                <div class="button-container">
+                    <button onclick="convertMetersToFeet()">Convert to Feet</button>
+                    <button onclick="convertFeetToMeters()">Convert to Meters</button>
+                </div>
+                <p id="metersResult"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; Conversion Assignment
+    </div>
+
+    <script>
+        // Celsius to Fahrenheit conversion
+        function convertCelsiusToFahrenheit() {
+            let celsius = document.getElementById("celsiusInput").value;
+            let fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("celsiusResult").innerText = `${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+        }
+
+        // Fahrenheit to Celsius conversion
+        function convertFahrenheitToCelsius() {
+            let fahrenheit = document.getElementById("celsiusInput").value;
+            let celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById("celsiusResult").innerText = `${fahrenheit}°F = ${celsius.toFixed(2)}°C`;
+        }
+
+        // Meters to Feet conversion
+        function convertMetersToFeet() {
+            let meters = document.getElementById("metersInput").value;
+            let feet = meters * 3.28084;
+            document.getElementById("metersResult").innerText = `${meters} meters = ${feet.toFixed(2)} feet`;
+        }
+
+        // Feet to Meters conversion
+        function convertFeetToMeters() {
+            let feet = document.getElementById("metersInput").value;
+            let meters = feet / 3.28084;
+            document.getElementById("metersResult").innerText = `${feet} feet = ${meters.toFixed(2)} meters`;
+        }
+    </script>
+
+</body>
+</html>
