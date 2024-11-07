@@ -59,6 +59,31 @@
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         }
 
+        /* Animated Text */
+        .moving-title {
+            display: inline-block;
+            animation: bounceText 1.5s ease-in-out infinite; /* Bouncing animation */
+        }
+
+        /* Bouncing Animation */
+        @keyframes bounceText {
+            0%, 100% {
+                transform: translateY(0); /* Start and end at the same position */
+            }
+            20% {
+                transform: translateY(-8px); /* Slight bounce up */
+            }
+            40% {
+                transform: translateY(0); /* Return to original position */
+            }
+            60% {
+                transform: translateY(-6px); /* Bounce up again */
+            }
+            80% {
+                transform: translateY(0); /* Return again */
+            }
+        }
+
         /* Centered Content (Assignments Section) */
         .centered-content {
             flex: 1;
@@ -150,6 +175,8 @@
     <audio id="background-music" autoplay loop>
         <source src="retromusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
+        const audio = document.getElementById('background-music');
+        audio.volume = 0.2;  // Set volume to 20% of the maximum
     </audio>
 
     <!-- Top Bar -->
@@ -159,7 +186,7 @@
 
     <!-- Course Title Container -->
     <div class="course-title-container">
-        CS 1130 - Introduction to Computing
+        <span class="moving-title">CS 1130 - Introduction to Computing</span>
     </div>
 
     <!-- Centered Content (Assignments) -->
@@ -221,6 +248,5 @@
             audio.muted = !audio.muted;
         }
     </script>
-
 </body>
 </html>
