@@ -34,6 +34,24 @@
         z-index: -1; /* Ensure it is behind other content */
         }
 
+        /* Styling for mute button */
+        .mute-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #c42827; /* Famicom red */
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .mute-button:hover {
+            background-color: #ffcc33; /* Gold highlight on hover */
+        }
+
         /* Top Bar Styles */
         .top-bar {
             background-color: #a62c2b; /* Famicom red */
@@ -126,6 +144,15 @@
 </head>
 <body>
 
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+        <source src="retromusic.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Mute Button -->
+    <button class="mute-button" onclick="toggleMute()">Mute</button>
+
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="name">Assignments Dashboard</div>
@@ -139,7 +166,6 @@
     <!-- Centered Content (Assignments) -->
     <div class="centered-content">
         <div class="assignments-section">
-
             <!-- Assignment #1 -->
             <div class="assignment-container">
                 <a href="assignment1.html" style="text-decoration: none; color: inherit;">
@@ -147,7 +173,6 @@
                 </a>
                 <p>Convert units like Celsius to Fahrenheit and Meters to Feet.</p>
             </div>
-
             <!-- Assignment #2 -->
             <div class="assignment-container">
                 <a href="assignment2.html" style="text-decoration: none; color: inherit;">
@@ -155,7 +180,6 @@
                 </a>
                 <p>Calculate tax based on income ranges.</p>
             </div>
-
             <!-- Assignment #3 -->
             <div class="assignment-container">
                 <a href="assignment3.html" style="text-decoration: none; color: inherit;">
@@ -163,7 +187,6 @@
                 </a>
                 <p>Calculate factorial, sum, and average of first N numbers.</p>
             </div>
-
             <!-- Assignment #4 -->
             <div class="assignment-container">
                 <a href="assignment4.html" style="text-decoration: none; color: inherit;">
@@ -171,7 +194,6 @@
                 </a>
                 <p>Design a payroll system for calculating salaries.</p>
             </div>
-
         </div>
     </div>
 
@@ -180,5 +202,14 @@
         &copy; 2024 Lance Jasper A. Maiso. 
     </div>
 
+    <script>
+        const audio = document.getElementById('background-music');
+        audio.volume = 0.1; // Lower volume for background music
+
+        function toggleMute() {
+            audio.muted = !audio.muted;
+            document.querySelector('.mute-button').innerText = audio.muted ? 'Unmute' : 'Mute';
+        }
+    </script>
 </body>
 </html>
