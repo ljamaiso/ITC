@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CS 1130 - Introduction to Computing</title>
+    <title>CS 1130 - Famicom Theme</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
     <style>
         /* General Body Styles */
         body {
-            font-family: 'Press Start 2P', cursive; /* Pixel-style font */
+            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
             margin: 0;
             padding: 0;
-            background-color: #2f3136; /* Discord dark background */
-            color: white;
+            background-color: #7c6b59; /* Famicom beige background */
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
         }
 
         /* Top Bar Styles */
         .top-bar {
-            background-color: #18191c; /* Darker gray/blackish for top bar */
-            color: #7289DA; /* Discord blue */
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 8px 16px;
-            font-size: 1.4rem; /* Smaller font size */
-            font-weight: bold;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         /* Course Title Container */
         .course-title-container {
-            background-color: #36393F;  /* Darker gray background for course title */
-            color: #7289DA; /* Discord blue */
-            padding: 12px;
+            background-color: #d9bc96; /* Famicom light tan */
+            color: #2e2e2e; /* Dark text */
+            padding: 15px;
             text-align: center;
-            font-size: 1.6rem; /* Smaller font size */
-            font-weight: bold;
-            margin-bottom: 15px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Soft shadow */
+            font-size: 1.2rem;
+            border: 2px solid #a62c2b; /* Famicom red border */
+            margin-bottom: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Centered Content (Assignments Section) */
@@ -61,70 +63,55 @@
 
         /* Pixel Art Assignment Containers */
         .assignment-container {
-            background-color: #40444b; /* Discord dark gray background */
+            background-color: #b89470; /* Famicom-style brown */
             padding: 15px;
             margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Soft shadow */
+            border: 2px solid #5e1a1a; /* Dark red border */
             text-align: left;
-            font-size: 1rem; /* Smaller font size */
-            transition: all 0.2s ease-in-out;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .assignment-container:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
 
         .assignment-container h3 {
-            font-size: 1.1rem; /* Smaller title size to fit in 1 line */
-            color: #5865F2; /* Discord blue */
+            font-size: 1rem;
+            color: #ffffff; /* White text */
             margin-bottom: 8px;
             cursor: pointer;
-            text-decoration: underline;
         }
 
         .assignment-container h3:hover {
-            color: #ff5c00; /* Orange color on hover */
+            color: #ffcc33; /* Gold highlight on hover */
         }
 
         .assignment-container p {
-            font-size: 1rem; /* Smaller text for description */
-            color: #b9bbbe; /* Light gray text */
+            font-size: 0.8rem;
+            color: #f5f5f5; /* Slightly off-white text */
             margin-bottom: 8px;
-        }
-
-        .assignment-container ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .assignment-container li {
-            font-size: 1rem; /* Smaller list item text */
-            margin-bottom: 8px;
-            color: #b9bbbe; /* Light gray text */
-            transition: color 0.2s ease-in-out;
-        }
-
-        .assignment-container li:hover {
-            color: #ff5c00; /* Orange hover effect */
         }
 
         /* Footer Styles */
         .footer {
-            background-color: #18191c; /* Dark gray for footer */
-            color: #b9bbbe; /* Light gray text */
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
             text-align: center;
             padding: 10px;
-            font-size: 1rem;
+            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
+            font-size: 0.8rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
-
     </style>
 </head>
 <body>
 
     <!-- Top Bar -->
     <div class="top-bar">
-        <div class="name">ljamaiso</div>
+        <div class="name">Assignments Dashboard</div>
     </div>
 
     <!-- Course Title Container -->
@@ -138,7 +125,7 @@
 
             <!-- Assignment #1 -->
             <div class="assignment-container">
-                <a href="assignment1.html">
+                <a href="assignment1.html" style="text-decoration: none; color: inherit;">
                     <h3>Assignment #1 - Conversion</h3>
                 </a>
                 <p>Convert units like Celsius to Fahrenheit and Meters to Feet.</p>
@@ -146,7 +133,7 @@
 
             <!-- Assignment #2 -->
             <div class="assignment-container">
-                <a href="assignment2.html">
+                <a href="assignment2.html" style="text-decoration: none; color: inherit;">
                     <h3>Assignment #2 - Income Tax Calculator</h3>
                 </a>
                 <p>Calculate tax based on income ranges.</p>
@@ -154,7 +141,7 @@
 
             <!-- Assignment #3 -->
             <div class="assignment-container">
-                <a href="assignment3.html">
+                <a href="assignment3.html" style="text-decoration: none; color: inherit;">
                     <h3>Assignment #3 - Factorial, Sum, and Average</h3>
                 </a>
                 <p>Calculate factorial, sum, and average of first N numbers.</p>
@@ -162,7 +149,7 @@
 
             <!-- Assignment #4 -->
             <div class="assignment-container">
-                <a href="assignment4.html">
+                <a href="assignment4.html" style="text-decoration: none; color: inherit;">
                     <h3>Assignment #4 - Simple Payroll</h3>
                 </a>
                 <p>Design a payroll system for calculating salaries.</p>
