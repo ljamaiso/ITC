@@ -3,156 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow"> <!-- Prevent search engines from indexing -->
     <title>Assignment Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* General Body Styles */
-        body {
-            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
-            margin: 0;
-            padding: 0;
-            background-color: #7c6b59; /* Famicom beige background */
-            background-repeat: repeat;
-            background-size: contain;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
-            z-index: -1; /* Ensure it is behind other content */
-        }
-
-        /* Top Bar Styles */
-        .top-bar {
-            background-color: #a62c2b; /* Famicom red */
-            color: #ffffff;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Course Title Container */
-        .course-title-container {
-            background-color: #d9bc96; /* Famicom light tan */
-            color: #c42827; /* White text */
-            padding: 20px;
-            text-align: center;
-            font-size: 1.5rem;
-            border: 2px solid #a62c2b; /* Famicom red border */
-            margin-bottom: 20px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Animated Text */
-        .moving-title {
-            display: inline-block;
-            animation: bounceText 1.5s ease-in-out infinite; /* Bouncing animation */
-        }
-
-        /* Bouncing Animation */
-        @keyframes bounceText {
-            0%, 100% {
-                transform: translateY(0); /* Start and end at the same position */
-            }
-            20% {
-                transform: translateY(-8px); /* Slight bounce up */
-            }
-            40% {
-                transform: translateY(0); /* Return to original position */
-            }
-            60% {
-                transform: translateY(-6px); /* Bounce up again */
-            }
-            80% {
-                transform: translateY(0); /* Return again */
-            }
-        }
-
-        /* Centered Content (Assignments Section) */
-        .centered-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Assignments Section */
-        .assignments-section {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        /* Pixel Art Assignment Containers */
-        .assignment-container {
-            background-color: #b89470; /* Famicom-style brown */
-            padding: 25px; /* Increased padding for larger box */
-            margin-bottom: 20px; /* More spacing between assignments */
-            border: 2px solid #5e1a1a; /* Dark red border */
-            text-align: left;
-            font-size: 1rem; /* Larger font */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .assignment-container h3 {
-            font-size: 1.2rem; /* Larger heading */
-            color: #c42827; /* Famicom red */
-            margin-bottom: 12px; /* Increased margin */
-            cursor: pointer;
-        }
-
-        .assignment-container h3:hover {
-            color: #ffcc33; /* Gold highlight on hover */
-        }
-
-        .assignment-container p {
-            font-size: 1rem; /* Increased font size */
-            color: #FFFFFF; /* Slightly off-white text */
-            margin-bottom: 12px;
-        }
-
-        /* Footer Styles */
-        .footer {
-            background-color: #a62c2b; /* Famicom red */
-            color: #ffffff;
-            text-align: center;
-            padding: 15px;
-            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
-            font-size: 0.8rem;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-       
+        /* Your existing CSS goes here */
     </style>
 </head>
 <body>
-
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -170,7 +29,7 @@
 
             <!-- Assignment #1 -->
             <div class="assignment-container">
-                <a href="assignment1.html" style="text-decoration: none; color: inherit;">
+                <a href="assignment1.html" style="text-decoration: none; color: inherit;" rel="noopener noreferrer">
                     <h3>Assignment #1 - Conversion</h3>
                 </a>
                 <p>Convert units like Celsius to Fahrenheit and Meters to Feet.</p>
@@ -178,7 +37,7 @@
 
             <!-- Assignment #2 -->
             <div class="assignment-container">
-                <a href="assignment2.html" style="text-decoration: none; color: inherit;">
+                <a href="assignment2.html" style="text-decoration: none; color: inherit;" rel="noopener noreferrer">
                     <h3>Assignment #2 - Income Tax Calculator</h3>
                 </a>
                 <p>Calculate tax based on income ranges.</p>
@@ -186,7 +45,7 @@
 
             <!-- Assignment #3 -->
             <div class="assignment-container">
-                <a href="assignment3.html" style="text-decoration: none; color: inherit;">
+                <a href="assignment3.html" style="text-decoration: none; color: inherit;" rel="noopener noreferrer">
                     <h3>Assignment #3 - Factorial, Sum, and Average</h3>
                 </a>
                 <p>Calculate factorial, sum, and average of first N numbers.</p>
@@ -194,7 +53,7 @@
 
             <!-- Assignment #4 -->
             <div class="assignment-container">
-                <a href="assignment4.html" style="text-decoration: none; color: inherit;">
+                <a href="assignment4.html" style="text-decoration: none; color: inherit;" rel="noopener noreferrer">
                     <h3>Assignment #4 - Simple Payroll</h3>
                 </a>
                 <p>Design a payroll system for calculating salaries.</p>
@@ -202,7 +61,6 @@
 
         </div>
     </div>
-
 
     <!-- Footer -->
     <div class="footer">
