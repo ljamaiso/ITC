@@ -149,35 +149,11 @@
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        /* Music Control Button Styles */
-        .music-control {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            background-color: #c42827; /* Famicom red */
-            color: #ffffff;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s;
-        }
-
-        .music-control:hover {
-            background-color: #ffcc33; /* Gold */
-        }
+       
     </style>
 </head>
 <body>
 
-    <!-- Background Music -->
-    <audio id="background-music" autoplay loop>
-        <source src="retromusic.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        const audio = document.getElementById('background-music');
-        audio.volume = 0.2;  // Set volume to 20% of the maximum
-    </audio>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -228,25 +204,11 @@
         </div>
     </div>
 
-    <!-- Music Control Buttons -->
-    <button class="music-control" onclick="playMusic()">Play Music</button>
-    <button class="music-control" onclick="toggleMute()">Mute/Unmute</button>
 
     <!-- Footer -->
     <div class="footer">
         &copy; 2024 Lance Jasper A. Maiso.
     </div>
 
-    <script>
-        function playMusic() {
-            const audio = document.getElementById('background-music');
-            audio.play();
-        }
-
-        function toggleMute() {
-            const audio = document.getElementById('background-music');
-            audio.muted = !audio.muted;
-        }
-    </script>
 </body>
 </html>
