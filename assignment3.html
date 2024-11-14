@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Factorial, Sum, and Average Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
+            margin: 0;
+            padding: 0;
+            background-color: #7c6b59; /* Famicom beige background */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers the content vertically */
+            align-items: center; /* Centers the content horizontally */
+            min-height: 100vh;
+            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
+            box-sizing: border-box;
+        }
+
+        /* Top Bar Styles */
+        .top-bar {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Title Container */
+        .container {
+            background-color: #d9bc96; /* Famicom light tan */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            width: 100%;
+            max-width: 400px; /* Limit the max width of the container */
+        }
+
+        h1 {
+            color: #c02727;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Input Styles */
+        label {
+            font-size: 1.2rem;
+            color: #ffffff; /* White font color for label */
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            background-color: #e9e9e9;
+            color: #333;
+            cursor: not-allowed;
+        }
+
+        .button {
+            background-color: #a62c2b; /* Famicom red */
+            color: white;
+            padding: 12px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #5e1a1a; /* Darker red on hover */
+        }
+
+        /* Results Container */
+        .results {
+            padding: 15px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            max-width: 400px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+            text-align: left; /* Left-align text inside the results container */
+        }
+
+        .results input {
+            background-color: #f8f9fa;
+            color: #495057;
+            cursor: not-allowed;
+        }
+
+        .results input[readonly] {
+            background-color: #f8f9fa;
+            color: #495057;
+            cursor: not-allowed;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #a62c2b; /* Famicom red */
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
+            font-size: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+            margin-top: auto; /* Ensures footer stays at the bottom */
+            width: 100%;
+        }
+
+        /* Back to Home Page link */
+        .back-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-link a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border: 2px solid #ffffff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-link a:hover {
+            background-color: #ffffff;
+            color: #a62c2b;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .top-bar {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .container, .results {
+                max-width: 90%;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .button {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+
+            .footer {
+                font-size: 0.9rem;
+            }
+
+            .back-link a {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="name">Factorial, Sum, and Average Calculator</div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Calculator</h1>
+
+        <label for="nnumber" id="nnumberLabel">Input Number</label>
+        <input type="number" id="nnumber" name="nnumber" onkeyup="calculateResults()">
+        <button type="button" class="button" onclick="calculateResults()">Calculate</button>
+    </div>
+
+    <!-- Results Container -->
+    <div class="results" id="results-container">
+        <h2>Results</h2>
+        <label for="factorResult" id="factorLabel">Factorial:</label>
+        <input type="number" id="factorResult" name="factorResult" readonly><br>
+        <label for="summationResult" id="summationLabel">Summation:</label>
+        <input type="number" id="summationResult" name="summationResult" readonly><br>
+        <label for="avgResult" id="avgLabel">Average:</label>
+        <input type="number" id="avgResult" name="avgResult" readonly><br>
+    </div>
+
+    <!-- Back to Home Page Link -->
+    <div class="back-link">
+        <a href="index.html">Back to Home Page</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Factorial, Sum, and Average Calculator
+    </div>
+
+    <script>
+        function calculateResults() {
+            let n = parseInt(document.getElementById('nnumber').value, 10);
+            if (isNaN(n) || n < 1) {
+                alert('Please enter a positive integer.');
+                return;
+            }
+
+            // Calculate Factorial
+            let factorial = 1;
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+
+            // Calculate Summation
+            let summation = 0;
+            for (let j = 1; j <= n; j++) {
+                summation += j;
+            }
+
+            // Calculate Average
+            let average = summation / n;
+
+            // Display results
+            document.getElementById('factorResult').value = factorial;
+            document.getElementById('summationResult').value = summation;
+            document.getElementById('avgResult').value = average.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
