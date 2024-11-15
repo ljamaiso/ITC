@@ -12,12 +12,24 @@
             font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
+            background-image: url('famicom.jpg'); /* Pixel art cloud background */
             background-color: #7c6b59;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             text-shadow: 2px 2px 0 #2e2e2e;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
+            z-index: -1; /* Ensure it is behind other content */
         }
 
         /* Top Bar Styles */
@@ -46,13 +58,12 @@
         /* Title Container */
         .container {
             background-color: #b89470;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            margin: 20px auto;
-            width: 400px;
-            border: 2px solid #5e1a1a;
+            padding: 30px;
+            border: 3px solid #5e1a1a;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 100%;
         }
 
         h1 {
@@ -112,20 +123,21 @@
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
         }
 
-         /* Back to Home Page link */
+        /* Back to Home Page link */
         .back-link {
             text-align: center;
-            margin-bottom: 20px;
+            margin-top:20px;
+            margin-bottom: 40px;
         }
 
         .back-link a {
             color: #a62c2b;
             background-color: #b89470;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             border: 2px solid #5e1a1a;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 8px 15px;
+            border-radius: 6px;
             transition: background-color 0.3s, color 0.3s;
         }
 
