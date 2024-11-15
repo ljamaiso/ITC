@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             background-color: #7c6b59; /* Famicom beige background */
+            background-image: url('famicom.jpg');
             color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -21,6 +22,17 @@
             min-height: 100vh;
             text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
             box-sizing: border-box;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
+            z-index: -1; /* Ensure it is behind other content */
         }
 
         /* Top Bar Styles */
@@ -136,14 +148,20 @@
         }
 
         /* Back to Home Page link */
+        .back-link {
+            text-align: center;
+            margin-top:20px;
+            margin-bottom: 40px;
+        }
+
         .back-link a {
             color: #a62c2b;
             background-color: #b89470;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             border: 2px solid #5e1a1a;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 8px 15px;
+            border-radius: 6px;
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -151,7 +169,6 @@
             background-color: #a62c2b;
             color: #ffcc33;
         }
-
     </style>
 </head>
 <body>
@@ -194,11 +211,7 @@
     <script>
         function calculateResults() {
             let n = parseInt(document.getElementById('nnumber').value, 10);
-            if (isNaN(n) || n < 1) {
-                alert('Please enter a positive integer.');
-                return;
-            }
-
+ 
             // Calculate Factorial
             let factorial = 1;
             for (let i = 1; i <= n; i++) {
