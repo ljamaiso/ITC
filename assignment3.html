@@ -98,17 +98,14 @@
 
         /* Results Container */
         .results {
-            padding: 15px;
+            background-color: #d9bc96; /* Famicom light tan */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 20px;
             width: 100%;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #ffffff;
-            max-width: 400px;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s;
-            text-align: left; /* Left-align text inside the results container */
+            max-width: 400px; /* Limit the max width of the container */
         }
 
         .results input {
@@ -137,54 +134,20 @@
         }
 
         /* Back to Home Page link */
-        .back-link {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
         .back-link a {
-            color: #ffffff;
+            color: #a62c2b;
+            background-color: #b89470;
             text-decoration: none;
-            font-size: 1.2rem;
-            border: 2px solid #ffffff;
-            padding: 8px 15px;
+            font-size: 1rem;
+            border: 2px solid #5e1a1a;
+            padding: 5px 10px;
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .back-link a:hover {
-            background-color: #ffffff;
-            color: #a62c2b;
-        }
-
-        /* Responsive design for smaller screens */
-        @media (max-width: 600px) {
-            .top-bar {
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            .container, .results {
-                max-width: 90%;
-                margin: 10px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .button {
-                font-size: 1rem;
-                padding: 10px 0;
-            }
-
-            .footer {
-                font-size: 0.9rem;
-            }
-
-            .back-link a {
-                font-size: 1rem;
-            }
+            background-color: #a62c2b;
+            color: #ffcc33;
         }
 
     </style>
