@@ -5,47 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Income Tax Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         /* General Body Styles */
         body {
-            font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
+            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
-            background-color: #7c6b59; /* Famicom beige background */
+            background-color: #7c6b59;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
+            text-shadow: 2px 2px 0 #2e2e2e;
         }
 
         /* Top Bar Styles */
         .top-bar {
-            background-color: #a62c2b; /* Famicom red */
+            background-color: #a62c2b;
             color: #ffffff;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             padding: 10px 20px;
             font-size: 1rem;
-            border-bottom: 4px solid #5e1a1a; /* Darker Famicom red for contrast */
+            border-bottom: 4px solid #5e1a1a;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main content should fill available space */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
 
         /* Title Container */
         .container {
-            background-color: #d9bc96; /* Famicom light tan */
+            background-color: #b89470;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 20px auto;
-            width: 300px;
+            width: 400px;
+            border: 2px solid #5e1a1a;
         }
 
         h1 {
-            color: #ffffff;
+            color: #862020;
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
@@ -53,7 +64,7 @@
         /* Taxable Income Label Style */
         label {
             font-size: 1rem;
-            color: #ffffff; /* White font color for label */
+            color: #ffffff;
         }
 
         /* Input Styles */
@@ -74,7 +85,7 @@
         }
 
         .button {
-            background-color: #a62c2b; /* Famicom red */
+            background-color: #a62c2b;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -87,19 +98,18 @@
         }
 
         .button:hover {
-            background-color: #5e1a1a; /* Darker red on hover */
+            background-color: #5e1a1a;
         }
 
         /* Footer Styles */
         .footer {
-            background-color: #a62c2b; /* Famicom red */
+            background-color: #a62c2b;
             color: #ffffff;
             text-align: center;
             padding: 10px;
-            border-top: 4px solid #5e1a1a; /* Darker Famicom red */
+            border-top: 4px solid #5e1a1a;
             font-size: 0.8rem;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-            margin-top: auto; /* Ensures footer stays at the bottom */
         }
 
          /* Back to Home Page link */
@@ -109,18 +119,19 @@
         }
 
         .back-link a {
-            color: #ffffff;
+            color: #a62c2b;
+            background-color: #b89470;
             text-decoration: none;
             font-size: 1rem;
-            border: 2px solid #ffffff;
+            border: 2px solid #5e1a1a;
             padding: 5px 10px;
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .back-link a:hover {
-            background-color: #ffffff;
-            color: #a62c2b;
+            background-color: #a62c2b;
+            color: #ffcc33;
         }
 
     </style>
@@ -133,27 +144,30 @@
     </div>
 
     <!-- Main Container -->
-    <div class="container">
-        <h1>Taxable Income</h1>
+    <main>
+        <div class="container">
+            <h1>Taxable Income</h1>
 
-        <label for="ti">Enter Taxable Income</label>
-        <input type="number" id="ti" onkeyup="computeTax()">
-        <br>
+            <label for="ti">Enter Taxable Income</label>
+            <input type="number" id="ti" onkeyup="computeTax()">
+            <br>
 
-        <label for="incometax">Tax Payable</label>
-        <input type="text" id="incometax" readonly>
+            <label for="incometax">Tax Payable</label>
+            <input type="text" id="incometax" readonly>
+        </div>
+    </main>
 
-    </div>
-
-    <!-- Back to Home Page Link -->
-    <div class="back-link">
-        <a href="index.html">Back to Home Page</a>
-    </div>
+            <!-- Back to Home Page Link -->
+            <div class="back-link">
+                <a href="index.html">Back to Home Page</a>
+            </div>
 
     <!-- Footer -->
     <div class="footer">
         &copy; 2024 Income Tax Calculator
     </div>
+
+    
 
     <script>
         function computeTax() {
