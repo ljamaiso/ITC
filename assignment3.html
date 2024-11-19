@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel font -->
     <style>
         /* General Body Styles */
+        * {
+            box-sizing: border-box; /* Ensure padding and borders don't cause overflow */
+        }
+
         body {
             font-family: 'Press Start 2P', cursive; /* Retro pixel-style font */
             margin: 0;
@@ -24,6 +28,7 @@
             min-height: 100vh;
             text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
             box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         body::before {
@@ -239,7 +244,7 @@
             // Display results
             document.getElementById('factorResult').value = factorial;
             document.getElementById('summationResult').value = summation;
-            document.getElementById('avgResult').value = average.toFixed(2);
+            document.getElementById('avgResult').value = average;
         }
     </script>
 
