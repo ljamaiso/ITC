@@ -23,7 +23,7 @@
             text-shadow: 2px 2px 0 #2e2e2e; /* Simple pixel shadow */
             box-sizing: border-box;
         }
-        
+
         body::before {
             content: '';
             position: absolute;
@@ -31,7 +31,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(124, 107, 89, 0.7); /* Adjust color and opacity */
+            background-color: rgba(36, 33, 33, 0.438); /* Adjust color and opacity */
             z-index: -1; /* Ensure it is behind other content */
         }
 
@@ -51,11 +51,11 @@
 
         /* Title Container */
         .container {
-            background-color: #b89470; /* Famicom light tan */
+            background-color:  #a62c2b; /* Famicom light tan */
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            border: 2px solid #5e1a1a;
+            border: 5px solid #5e1a1a;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 20px;
             width: 100%;
@@ -63,7 +63,8 @@
         }
 
         h1 {
-            color: #c02727;
+            color: #ffcc33;
+            text-shadow: 3px 3px 0 #491c11;
             font-size: 1.8rem;
             margin-bottom: 15px;
         }
@@ -93,7 +94,7 @@
         }
 
         .button {
-            background-color: #a62c2b; /* Famicom red */
+            background-color: #571616; /* Famicom red */
             color: white;
             padding: 12px 0;
             border: none;
@@ -111,8 +112,8 @@
 
         /* Results Container */
         .results {
-            background-color: #b89470; /* Famicom light tan */
-            border: 2px solid #5e1a1a;
+            background-color: #a62c2b; /* Famicom light tan */
+            border: 5px solid #5e1a1a;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
@@ -120,6 +121,12 @@
             margin: 20px;
             width: 100%;
             max-width: 400px; /* Limit the max width of the container */
+        }
+
+        h2 {
+            color: #ffcc33;
+            text-shadow: 3px 3px 0 #491c11;
+            font-size: 1.8rem;
         }
 
         .results input {
@@ -150,13 +157,13 @@
         /* Back to Home Page link */
         .back-link {
             text-align: center;
-            margin-top:20px;
+            margin-top: 20px;
             margin-bottom: 40px;
         }
 
         .back-link a {
-            color: #a62c2b;
-            background-color: #b89470;
+            color: #ffffff;
+            background-color: #a62c2b;
             text-decoration: none;
             font-size: 1.2rem;
             border: 2px solid #5e1a1a;
@@ -166,8 +173,8 @@
         }
 
         .back-link a:hover {
-            background-color: #a62c2b;
-            color: #ffcc33;
+            background-color: #ffcc33;
+            color: #a62c2b;
         }
     </style>
 </head>
@@ -205,7 +212,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        &copy; 2024 Factorial, Sum, and Average Calculator
+        &copy; Lance Jasper A. Maiso
     </div>
 
     <script>
