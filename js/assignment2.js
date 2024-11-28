@@ -1,16 +1,13 @@
-// Add an event listener to the input field
-document.addEventListener("DOMContentLoaded", () => {
-    const tiInput = document.getElementById("ti");
-
-    
-    tiInput.addEventListener("input", computeTax);
-});
+document.getElementById("calculateTaxButton").addEventListener("click", computeTax);
 
 function computeTax() {
-    let ti, basictax = 0, brackettax = 0, totaltax = 0;
+    let ti = parseFloat(document.getElementById('ti').value);  // Get input value and convert it to a number
+    if (isNaN(ti) || ti <= 0) {
+        alert("Please enter a valid income amount.");
+        return;
+    }
 
-    
-    ti = parseFloat(document.getElementById("ti").value) || 0;
+    let basictax, brackettax, totaltax;
 
     if (ti < 250000) {
         basictax = 0;
@@ -33,7 +30,5 @@ function computeTax() {
     }
 
     totaltax = basictax + brackettax;
-
-    
-    document.getElementById("incometax").value = totaltax.toFixed(0);
+    document.getElementById('incometax').value = totaltax.toFixed(0);  // Display the tax in the readonly input field
 }
