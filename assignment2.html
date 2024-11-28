@@ -16,22 +16,19 @@
     </div>
 
     <!-- Main Container -->
-    <main>
-        <div class="container">
-            <h1>Taxable Income</h1>
+    <div class="container">
+        <h1>Calculate Your Income Tax</h1>
 
-            <label for="ti">Enter Taxable Income</label>
-            <input type="number" id="ti">
-            <br>
+        <label for="ti" id="tiLabel">Total Income:</label>
+        <input type="number" id="ti" name="ti">
+        <button type="button" class="button" id="calculateTaxButton">Calculate Tax</button>
+    </div>
 
-            <label for="incometax">Tax Payable</label>
-            <input type="text" id="incometax" readonly>
-        </div>
-    </main>
-
-    <!-- Back to Home Page Link -->
-    <div class="back-link">
-        <a href="index.html">Back to Home Page</a>
+    <!-- Results Container -->
+    <div class="results" id="results-container">
+        <h2>Results</h2>
+        <label for="incometax" id="incomeTaxLabel">Income Tax:</label>
+        <input type="number" id="incometax" name="incometax" readonly><br>
     </div>
 
     <!-- Footer -->
