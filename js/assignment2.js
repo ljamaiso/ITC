@@ -25,3 +25,4 @@
 
             totaltax = basictax + brackettax;
             document.getElementById("incometax").value = totaltax.toFixed(0); 
+        }
