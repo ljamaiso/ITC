@@ -1,18 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const calculateButton = document.querySelector(".button");
-
-    calculateButton.addEventListener("click", calculateResults);
-});
+document.getElementById("calculateButton").addEventListener("click", calculateResults);
 
 function calculateResults() {
-    // Retrieve the input value
-    const inputField = document.getElementById('nnumber');
-    const n = parseInt(inputField.value, 10);
+    let n = parseInt(document.getElementById('nnumber').value, 10);
 
-    // Validate input
+    // Check if the input value is valid
     if (isNaN(n) || n <= 0) {
-        alert("Please enter a positive integer.");
-        clearResults(); // Clear previous results if the input is invalid
+        alert("Please enter a valid positive number.");
         return;
     }
 
@@ -34,11 +27,5 @@ function calculateResults() {
     // Display results
     document.getElementById('factorResult').value = factorial;
     document.getElementById('summationResult').value = summation;
-    document.getElementById('avgResult').value = average.toFixed(2);
-}
-
-function clearResults() {
-    document.getElementById('factorResult').value = '';
-    document.getElementById('summationResult').value = '';
-    document.getElementById('avgResult').value = '';
+    document.getElementById('avgResult').value = average;
 }
