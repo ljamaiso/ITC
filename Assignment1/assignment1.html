@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conversion Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assignment1.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">Conversion Tool</div>
 
+    <!-- Centered Content -->
+    <main>
+        <div class="container">
+            <h3>Select Conversion Type</h3>
+            <select id="conversionType">
+                <option value="cToF">Celsius to Fahrenheit</option>
+                <option value="fToC">Fahrenheit to Celsius</option>
+                <option value="mToF">Meters to Feet</option>
+                <option value="fToM">Feet to Meters</option>
+            </select>
+            <input type="number" id="inputValue" placeholder="Enter value">
+            <button onclick="convert()">Convert</button>
+            <input type="text" id="resultInput" readonly>
+        </div>
+    </main>
+
+    <!-- Back to Home Page Link -->
+    <div class="back-link">
+        <a href="./index.html">Back to Home Page</a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">&copy; Lance Jasper A. Maiso</div>
+
+    <script src="assignment1.js"></script>
+</body>
+</html>
