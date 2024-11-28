@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Income Tax Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/assignment2.css">
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
 </head>
 <body>
 
@@ -16,19 +16,22 @@
     </div>
 
     <!-- Main Container -->
-    <div class="container">
-        <h1>Calculate Your Income Tax</h1>
+    <main>
+        <div class="container">
+            <h1>Taxable Income</h1>
 
-        <label for="ti" id="tiLabel">Total Income:</label>
-        <input type="number" id="ti" name="ti">
-        <button type="button" class="button" id="calculateTaxButton">Calculate Tax</button>
-    </div>
+            <label for="ti">Enter Taxable Income</label>
+            <input type="number" id="ti">
+            <br>
 
-    <!-- Results Container -->
-    <div class="results" id="results-container">
-        <h2>Results</h2>
-        <label for="incometax" id="incomeTaxLabel">Income Tax:</label>
-        <input type="number" id="incometax" name="incometax" readonly><br>
+            <label for="incometax">Tax Payable</label>
+            <input type="text" id="incometax" readonly>
+        </div>
+    </main>
+
+    <!-- Back to Home Page Link -->
+    <div class="back-link">
+        <a href="index.html">Back to Home Page</a>
     </div>
 
     <!-- Footer -->
@@ -36,7 +39,7 @@
         &copy; Lance Jasper A. Maiso
     </div>
 
-    <script src="js/assignment2.js"></script>
+    <script src="script.js"></script> <!-- External JavaScript -->
 
 </body>
 </html>
