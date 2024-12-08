@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span>Simple PayRoll</span>
+    </div>
+
+    <main>
+        <!-- Manage Employees Section -->
+        <div class="container manage-container">
+            <h1>Manage Employees</h1>
+            <!-- Add Employee Fields -->
+            <label for="employee">Employee Name:</label>
+            <input type="text" id="employee" placeholder="Enter employee name">
+    
+            <label for="daysWorked">Days Worked:</label>
+            <input type="number" id="daysWorked" placeholder="0">
+    
+            <label for="dayRate">Daily Rate:</label>
+            <input type="number" id="dayRate" placeholder="0.00" step="0.01">
+    
+            <label for="deduct">Deductions:</label>
+            <input type="number" id="deduct" placeholder="0.00" step="0.01">
+    
+            <button id="btnaddEmployee" class="button">Add Employee</button>
+            <button id="btnclearList" class="button">Clear List</button>
+
+            <!-- Delete Employee Fields -->
+            <div class="delete-container">
+                <h1>Delete Employee</h1>
+                <label for="deleteIndex">Enter Employee Number:</label>
+                <input type="number" id="deleteIndex" placeholder="Enter number (e.g., 1)" min="1">
+                <button id="btnDeleteEmployee" class="button">Delete Employee</button>
+            </div>
+        </div>
+
+        <!-- Employee List Section -->
+        <div class="container employee-container">
+            <h1>Employee List</h1>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Days Worked</th>
+                        <th>Daily Rate</th>
+                        <th>Deductions</th>
+                        <th>Gross Pay</th>
+                        <th>Net Pay</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Back to Home Button -->
+        <button class="back-button" onclick="window.location.href='index.html';">Back to Home</button>
+    </main>
+
+    <script src="js/assignment4.js"></script>
+</body>
+</html>
